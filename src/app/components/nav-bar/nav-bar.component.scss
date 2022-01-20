@@ -1,0 +1,39 @@
+.hamburguer {
+    width: 25px;
+    border-top: 4px solid;
+    display: block;
+    color: #fff;
+    @screen md {
+        display: none;
+    }
+    &::after,
+    &::before {
+        border: 2px solid;
+        width: 25px;
+        background: currentColor;
+        content: '';
+        display: block;
+        margin-top: 5px;
+        transition: .3s;
+        position: relative;
+    }
+}
+
+.ativado {
+    z-index: 20;
+    .hamburguer {
+        border-top-color: transparent;
+        &::before {
+            transform: rotate(135deg);
+        }
+        &::after {
+            transform: rotate(-135deg);
+            top: -8px;
+        }
+    }
+}
+
+.ativadoUl {
+    top: 80px;
+    opacity: 1;
+}
